@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="gray">
+    <ion-button slot="start" color="light" defaultHref="">
+      <ion-icon slot="icon-only" name="help-circle-outline" ></ion-icon>
+    </ion-button>
+    <ion-title><h6 class="header">Anatome</h6></ion-title>
+    <ion-button slot="end" color="light" defaultHref="">
+      <ion-icon slot="icon-only" name="settings-outline" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text" formControlName="nome" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" formControlName="nomeParte" readonly ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Resposta</ion-label>
+      <ion-input type="text" placeholder="Insira a resposta aqui" formControlName="resposta" required></ion-input>
+    </ion-item>
+
+    
+
+    <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid" defaultHref="'/questao/'+ 1">Próximo</ion-button>
+    <ion-button  expand="block" color="danger" [routerLink]="'/avaliacao'" (click)="exibirMensagem1()"detail>Finalizar</ion-button>
+  </form>
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="#a9a9a9">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h6 class="footer">Versão </h6>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+

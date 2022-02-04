@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="gray">
+    <ion-button slot="start" color="light" defaultHref="">
+      <ion-icon slot="icon-only" name="help-circle-outline" ></ion-icon>
+    </ion-button>
+    <ion-title><h6 class="header">Anatome</h6></ion-title>
+    <ion-button slot="end" color="light" defaultHref="">
+      <ion-icon slot="icon-only" name="settings-outline" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of appPages" [routerLink]="p.url" detail>
+      <ion-icon slot="start" [ion]="p.icon + '-outline'" [md]="p.icon + '-sharp'" [color]="p.color"></ion-icon>
+      <ion-label>{{p.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="#a9a9a9">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h6 class="footer">Versão </h6>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

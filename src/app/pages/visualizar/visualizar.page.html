@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="gray">
+    <ion-button slot="start" color="light" defaultHref="">
+      <ion-icon slot="icon-only" name="help-circle-outline" ></ion-icon>
+    </ion-button>
+    <ion-title><h6 class="header">Anatome</h6></ion-title>
+    <ion-button slot="end" color="light" defaultHref="">
+      <ion-icon slot="icon-only" name="settings-outline" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-text>
+    <h6> Você está em Avaliação/VerificarAvaliacao </h6>
+  </ion-text>
+
+  <ion-text>
+    <h5>Dados da avaliação </h5>
+  </ion-text>
+
+  <ion-list>
+      <ion-item>
+        <ion-text>
+          Título: {{avaliacao.tituloAvaliacao}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>
+          Subtítulo: {{avaliacao.subtituloAvaliacao}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>
+          Tempo: {{avaliacao.tempo}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>
+          Número de Tentativas: {{avaliacao.numeroTentativas}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>
+          Nota máxima: {{avaliacao.valorTotal}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>
+          Status: 
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text>
+          Nota: 
+        </ion-text>
+      </ion-item>
+  </ion-list>
+
+  <ion-item class="textoAbaixoLista">
+    <ion-text>
+      Realizar avaliação
+    </ion-text>
+    <ion-button slot="end" color="success" [routerLink] ="'/realizar/'+ avaliacao.idAvaliacao" detail>
+      <ion-icon slot="icon-only" name="pencil" ></ion-icon>
+    </ion-button>
+  </ion-item>
+ 
+    
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="#a9a9a9">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h6 class="footer">Versão </h6>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
